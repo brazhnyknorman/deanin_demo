@@ -3,6 +3,8 @@
     <h3><%= post.title %></h3>
   </p>
 
+  <h6><%= pluralize(post.views, "view") %> </h6>
+
   <p>
     <strong>Body:</strong>
     <%= post.body %>
