@@ -1,15 +1,16 @@
 <% if current_user %>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Dropdown
+      <%= current_user.name %>
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li> <%= link_to "New Post", new_post_path, class: 'dropdown-item'%> </li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
       <li><hr class="dropdown-divider"></li>
-
-      <li class="dropdown-item">
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+      <li>
+        <%= link_to "Edit account", edit_user_registration_path, class: "dropdown-item"%>
+      </li>
+      <li>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item"%>
       </li>
       <li><a class="dropdown-item" href="#">Something else here</a></li>
     </ul>
